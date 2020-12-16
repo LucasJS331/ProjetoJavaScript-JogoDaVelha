@@ -1,0 +1,66 @@
+body{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+/* botões */
+
+#buttons-container button{
+    border: none;
+    padding: 13px 15px;
+    margin: 15px 7px;
+    background-color: #9250f3;
+    color: white;
+    margin-bottom: 25px;
+
+}
+
+#buttons-container button:hover{
+    border: none;
+    padding: 13px 15px;
+    margin: 15px 7px;
+    background-color: #8a45ef;
+    color: white;
+    margin-bottom: 25px;
+}
+
+/* jogo */
+#container{
+    display: flex;
+    width: 300px;
+    margin: 0px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.box{
+    height: 100px;
+    border: 5px solid black;
+    box-sizing: border-box;
+    flex: 1 1 33%;
+}
+
+
+#block1,#block2,#block3{
+    border-top: none;
+}
+
+#block1,#block4,#block7{
+    border-left: none;
+}
+
+#block7,#block8,#block9{
+    border-bottom: none;
+}
+
+#block3,#block6,#block9{
+    border-right: none;
+}
