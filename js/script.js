@@ -10,10 +10,6 @@ let secondPlayer;
 let player1 = 0;
 let player2 = 0;
 
-console.log(boxes);
-
-
-
 
 for(let i = 0; i < boxes.length; i++){
     boxes[i].addEventListener('click', function(){
@@ -30,7 +26,15 @@ for(let i = 0; i < boxes.length; i++){
             //computar a jogada
 
             if(player1 == player2){
+
                 player1++
+
+                if(secondPlayer == 'ai-player'){
+                    //função executar a jogada
+                    computerPlay();
+                    player2++;
+
+                }
             } else{
                 player2++
             }
@@ -38,12 +42,27 @@ for(let i = 0; i < boxes.length; i++){
             checkWinCondition();
         }
     })
-
-
-
     
 }
+    //Evento pra saber quem vai jogar
 
+    for(let i =0; i < buttons.length; i++){
+
+        buttons[i].addEventListener('click', ()=>{
+
+            secondPlayer = buttons[i].getAttribute('id');
+
+            for(let j =0; j< buttons.length; j++){
+                buttons[j].style.display = 'none';
+            }
+
+           setTimeout(()=>{
+                let container = document.querySelector('#container');
+
+                container.classList.remove('hide');
+           },300);
+        })
+    }
 
 function checkEl(player1,player2){
     if(player1 == player2){
@@ -84,11 +103,7 @@ function checkWinCondition(){
             
             declareWinner('o');
 
-        }
-
-
-        
-    
+        }  
 
     }
 
@@ -119,10 +134,6 @@ function checkWinCondition(){
             declareWinner('o');
 
         }
-
-
-        
-    
 
     }
     //vertical
@@ -224,11 +235,7 @@ function checkWinCondition(){
 
     if(counter == 9){
         declareWinner('deu velha');
-    }
-
-
-
-    
+    }    
 
 }
 
@@ -254,26 +261,56 @@ function declareWinner(winner){
 
     messageText.innerHTML = msg;
     message.classList.remove('hide');
-
-
-    console.log(message.classList);
      
-    message.addEventListener('click', ()=>{
+    // esconde mensagem
+
+    setTimeout(()=>{
         message.classList.add('hide');
-    })
+    },3000);
 
     player1 = 0;
     player2 = 0;
 
     let boxesToRemove = document.querySelectorAll('.box div');
 
-    setTimeout(()=>{
+    
         for(let i = 0; i < boxesToRemove.length; i++){
             boxesToRemove[i].parentNode.removeChild(boxesToRemove[i]);
         }
-    },500);
+    
     
 
+}
+
+// Executar logica da jogada do CPU
+
+function computerPlay(){
+    let cloneO = o.cloneNode(true);
+
+    let counter = 0;
+     let filled = 0;
+
+    for(let i = 0; i < boxes.length; i++){
+
+        let randomNumber = Math.floor(Math.random() * 5);
+
+        // só preencer se tiver vazio o filho
+        if(boxes[i].childNodes[0] == undefined){
+            if(randomNumber <=1){
+                boxes[i].appendChild(cloneO);
+                counter++;
+                break;
+            
+            // checagem de quantas estao preenchidas
+            }else{
+                filled++;
+            }
+        }
+    }
+
+    if(counter == 0 && filled < 9){
+        
+    }
 }
 
 
