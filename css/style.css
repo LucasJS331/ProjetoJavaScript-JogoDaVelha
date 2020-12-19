@@ -75,7 +75,7 @@ h1{
 .o{
     width: 50px;
     height: 50px;
-    border: 5px solid green;
+    border: 5px solid #2dd082;
     border-radius: 50%;
     display: inline-block;
     margin-top: 17px;
@@ -100,7 +100,7 @@ h1{
     width: 18px;
     height: 18px;
     display: inline-block;
-    border:  3px solid green;
+    border:  3px solid #2dd082;
     border-radius: 50%;
 }
 
@@ -126,4 +126,29 @@ h1{
 
 .hide{
     display: none !important;
+}
+
+#light{
+    width: 100px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 20px;
+    right: 30px;
+}
+
+#light img{
+    width: 30px;
+    height: 30px;
+}
+
+#light img:hover{
+    width: 35px;
+    height: 35px;
+    
+}
+
+#light p{
+    width: 40px;
+    height: 40px;
 }

@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Jogo da Velha</h1>
+    <h1 id="titulo-principal">Jogo da Velha</h1>
     <div id="buttons-container">
         <button id="2-players">2 Jogadores</button>
         <button id="ai-player">Contra IA</button>
@@ -23,7 +23,7 @@
         <div class="box" id="block9"></div>
 
         <div id="scoreboard-container">
-            <h2>Placar:</h2>
+            <h2 id="placar">Placar:</h2>
             <span class="score-box">
                 <span id="x-scoreboard">X</span>:
                 <span id="scoreboard-1">0</span>
@@ -42,9 +42,15 @@
     </div>
 
     <div id="message" class="hide">
-        <p>aaa</p>
+        <p></p>
     </div>
 
+    <di id="light">
+        <p id="luz">
+            <img src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678078-light-bulb-512.png">
+         </p>
+
+    <script src="js/DarkMode.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
