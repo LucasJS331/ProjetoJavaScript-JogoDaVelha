@@ -1,6 +1,6 @@
 # Tic-Tac-Toe 🎮
 
-<img src="./public\img\TicTacToe.gif">
+<img src="./public\img\TicTacToe.gif" heigth='40px'>
 
 # Sobre o Projeto
 O Projeto **Tic-Tac-Toe** é um projeto realizado utilizando JavaScript Puro para executar a logica do jogo, junto HTML e CSS3 para a realização da interface completa
